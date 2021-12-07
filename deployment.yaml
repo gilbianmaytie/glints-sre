@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mc1
+spec:
+  volumes:
+  - name: html
+    emptyDir: {}
+  containers:
+  - name: headless
+    image: headless-dockerfile
+    volumeMounts:
+    - name: headless
+      mountPath: /usr/share/
+  - name: novnc-dockerfile
+    image: novnc-dockerfile
+    volumeMounts:
+    - name: novnc
+      mountPath: /usr/share/
+  - name: vnc
+    image: vnc-dcokerfile
+    volumeMounts:
+    - name: vnc
+      mountPath:  /usr/share/
+
